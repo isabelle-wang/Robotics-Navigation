@@ -18,7 +18,6 @@ def publishArrived():
     return None
 
 def move(boat, dest, yaw):
-    #travel = haversine(45.423773,-75.687884,45.419827,-75.678625)
 
     deltx = boat[0] - dest[0]
     delty = boat[1] - dest[1]
@@ -59,12 +58,10 @@ def move(boat, dest, yaw):
     
 
     travel = math.sqrt(delty**2 + deltx**2)
-    destArrivalOff = 15 #assuming in cm
+    destArrivalOff = 15 
     destAngleOff = 2
 
     if((travel >= 0) and (travel < destArrivalOff) and (angleDest - destAngleOff < yaw) and (angleDest + 2 > yaw )): #check if dest reached
-        #not move
-        #publish to smth that dest reached
 
         return publishArrived()
     else:
@@ -100,11 +97,6 @@ def main():
 
     print("ARRIVED")
 
-
-#testing move function
-
-    
-#updating yaw function
 def updateYaw (x,y,yaw):
     if x = 0:
         return yaw
